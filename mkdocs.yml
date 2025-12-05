@@ -1,0 +1,51 @@
+site_name: Implementação RSA
+site_description: Documentação para implementação educacional do algoritmo RSA.
+site_author: Eduardo Ferrari, Filipe Calabro, Gabriel Farias
+
+theme:
+  name: material
+  logo: inteli.webp
+  language: pt-BR
+  palette:
+    - scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+
+
+nav:
+  - Documentação:
+    - Início: index.md
+    - Guia de Uso: usage.md
+    - Módulo RSA: reference/rsa.md
+    - Utilitários Matemáticos: reference/utils.md
+    - Codificação: reference/encoding.md

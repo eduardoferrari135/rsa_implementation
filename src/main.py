@@ -7,7 +7,11 @@ def main():
         content = input("Enter the content you want to encrypt: ")
         key_pair = RSA.generate_keys()
 
-        with open("key.txt", "w") as file:
+        path = input("Enter the key.txt path (default: './key.txt'): ")
+        if len(path) == 0:
+            path = "./key.txt"
+
+        with open(path, "w") as file:
             file.write(key_pair.export_key())
             print("Key saved at key.txt.")
 

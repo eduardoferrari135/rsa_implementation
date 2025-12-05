@@ -5,7 +5,11 @@ import secrets
 def generate_prime(bits=1024):
     while True:
         candidate = secrets.randbits(bits)
+
+        # Transforma o bit mais significativo e menos significativo em 1,
+        # garantindo números grandes e ímpares
         candidate |= (1 << bits - 1) | 1
+
         if is_prime(candidate):
             return candidate
 
@@ -38,21 +42,6 @@ def is_prime(n: int, rounds=40):
             return False
 
     return True
-
-
-def mod_exponent(x: int, y: int, p: int):
-    """
-    Retorna (x^y) % p
-    """
-    res = 1
-    base = x % p
-
-    while y > 0:
-        if y % 2 == 1:
-            res = (res * base) % p
-        base = (base * base) % p
-        y = y // 2
-    return res
 
 
 def gcd(a, b):
